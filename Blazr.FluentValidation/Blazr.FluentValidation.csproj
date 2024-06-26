@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Blazor Fluent Validation</Title>
+		<Authors>Shaun Curtis</Authors>
+		<Company>Colde Elm Coders</Company>
+		<Description>A set of objects and components to provide Fluent validation in Blazor.</Description>
+		<Copyright>Use and Donate</Copyright>
+		<PackageReadmeFile>Package.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/ShaunCurtis/Blazr.EditStateTracker</RepositoryUrl>
+		<PackageReleaseNotes>Release 1.0.0</PackageReleaseNotes>
+		<PackageLicenseFile>license.txt</PackageLicenseFile>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Blazr.BaseComponents" Version="1.0.1" />
+		<PackageReference Include="FluentValidation" Version="11.9.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="license.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="Package.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
+</Project>
