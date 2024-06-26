@@ -20,7 +20,7 @@ namespace Blazr.FluentValidation;
 /// </summary>
 /// <typeparam name="TRecord"></typeparam>
 /// <typeparam name="TValidator"></typeparam>
-public sealed class BlazrValidator<TRecord, TValidator> : BlazrControlBase, IDisposable
+public sealed class BlazrFluentValidator<TRecord, TValidator> : BlazrControlBase, IDisposable
     where TRecord : class
     where TValidator : class, IValidator<TRecord>, new()
 {
