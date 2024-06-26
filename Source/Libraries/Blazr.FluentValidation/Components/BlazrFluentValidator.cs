@@ -56,6 +56,8 @@ public sealed class BlazrFluentValidator<TRecord, TValidator> : BlazrControlBase
             // Set up the listeners on the edit context so we can run validation
             _editContext.OnValidationRequested += OnValidationRequested;
             _editContext.OnFieldChanged += OnFieldChanged;
+
+            _existingEditContext = _editContext;
         }
 
         return Task.CompletedTask;
@@ -73,7 +75,7 @@ public sealed class BlazrFluentValidator<TRecord, TValidator> : BlazrControlBase
         }
 
         // Clear any exisitng messages from the message store
-        _validationMessageStore.Clear();
+        _validationMessageStore?.Clear();
     }
 
     /// <summary>

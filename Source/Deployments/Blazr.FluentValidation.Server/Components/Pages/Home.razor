@@ -1,7 +1,49 @@
 ﻿@page "/"
-
+@using Blazr.FluentValidation
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Validation Demo</h1>
 
-Welcome to your new app.
+<EditForm Model="_model" OnValidSubmit="this.OnValidSubmit">
+    <BlazrFluentValidator TRecord="WeatherForecast" TValidator="WeatherForecastValidator" />
+
+    <div class="mb-2">
+        <label class="form-label">Date</label>
+        <InputDate class="form-control mb-3" @bind-Value="_model.Date" />
+        <ValidationMessage For="() => _model.Date" />
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label">Temperature &deg; C</label>
+        <InputNumber class="form-control mb-3" @bind-Value="_model.TemperatureC" />
+        <ValidationMessage For="() => _model.TemperatureC" />
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label">Summary</label>
+        <InputText class="form-control mb-3" @bind-Value="_model.Summary" />
+        <ValidationMessage For="() => _model.Summary" />
+    </div>
+
+    <div class="text-end mb-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+
+    <ValidationSummary />
+
+</EditForm>
+
+<div class="bg-dark text-white m-2 p-2">
+    <pre>Date: @_model.Date.ToShortDateString()</pre>
+    <pre>Temp: @_model.TemperatureC</pre>
+    <pre>Summary: @_model.Summary</pre>
+</div>
+
+@code {
+    private WeatherForecast _model = new();
+
+    private void OnValidSubmit()
+    {
+
+    }
+}
