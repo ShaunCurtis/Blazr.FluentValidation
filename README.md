@@ -2,7 +2,7 @@
 
 This Repo contains the source and demo code for my simple Fluent Validation implementation.
 
-## Installatiuon
+## Installation
 
 Install the following Nuget packages:
 
